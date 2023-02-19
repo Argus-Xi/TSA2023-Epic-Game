@@ -8,13 +8,13 @@ func _ready():
 
 func _process(delta):
 	var velocity = Vector2.ZERO # The player's movement vector.
-	if Input.is_action_pressed("p1_right"):
+	if Input.is_action_pressed("p3_right"):
 		velocity.x += 1
-	if Input.is_action_pressed("p1_left"):
+	if Input.is_action_pressed("p3_left"):
 		velocity.x -= 1
-	if Input.is_action_pressed("p1_down"):
+	if Input.is_action_pressed("p3_down"):
 		velocity.y += 1
-	if Input.is_action_pressed("p1_up"):
+	if Input.is_action_pressed("p3_up"):
 		velocity.y -= 1
 
 	if velocity.length() > 0:
@@ -26,8 +26,9 @@ func _process(delta):
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
 
-# Called when the node enters the scene tree for the first time.
 
+
+# Called when the node enters the scene tree for the first time.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
