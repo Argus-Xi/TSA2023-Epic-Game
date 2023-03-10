@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wall-texture-brick-11569806424bmrhbuekcb.jpg-5c79457f62ad50dd03da20d71c7ec606.stex"
+path="res://.import/Red_Triangle.png-ef48ae7e92efdeb1abd84fdac6dd3fed.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/wall-texture-brick-11569806424bmrhbuekcb.jpg"
-dest_files=[ "res://.import/wall-texture-brick-11569806424bmrhbuekcb.jpg-5c79457f62ad50dd03da20d71c7ec606.stex" ]
+source_file="res://art/Red_Triangle.png"
+dest_files=[ "res://.import/Red_Triangle.png-ef48ae7e92efdeb1abd84fdac6dd3fed.stex" ]
 
 [params]
 

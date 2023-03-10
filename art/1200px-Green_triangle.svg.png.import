@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/wall-texture-brick-11569806424bmrhbuekcb.jpg-5c79457f62ad50dd03da20d71c7ec606.stex"
+path="res://.import/1200px-Green_triangle.svg.png-53f5f93487b708d95469a09559066c07.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/wall-texture-brick-11569806424bmrhbuekcb.jpg"
-dest_files=[ "res://.import/wall-texture-brick-11569806424bmrhbuekcb.jpg-5c79457f62ad50dd03da20d71c7ec606.stex" ]
+source_file="res://art/1200px-Green_triangle.svg.png"
+dest_files=[ "res://.import/1200px-Green_triangle.svg.png-53f5f93487b708d95469a09559066c07.stex" ]
 
 [params]
 
