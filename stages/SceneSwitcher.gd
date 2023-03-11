@@ -8,6 +8,10 @@ onready var menu_screen = $MenuScreen  # menu screen UI reference
 
 onready var solve_screen = $SolveScreen
 
+onready var score_message = $SolveScreen/ScoreMessage
+
+onready var die_screen = $DieScreen
+
 var max_number_levels = 3   # Set number of levels to be cycled through (including Level0 or TitleScreen)
 
 func _ready() -> void:
@@ -27,22 +31,41 @@ func handle_next_level(current_level_number: int):
 	current_level.queue_free()
 	current_level = next_level
 	solve_screen.visible = false   # After a level is solved and "next" button is pressed, the solve screen should disappear
+	die_screen.visible = false    # Same as solve screen above
 
-func handle_level_solved():
+func handle_level_solved(score):
 	solve_screen.visible = true
+	score_message.text = "Score: " + str(stepify(score, 0.01))
 	
 func handle_player_death():
-	print(current_level.level_number)
+	die_screen.visible = true
 
 # Pulls up menu screen
 func _on_MenuButton_pressed():
 	menu_screen.visible = not menu_screen.visible
+	
+	
+
+#  FUNCTIONS FOR ALL BUTTONS IN SOLVE SCREEN
+
+func _on_NextButtonMain_pressed():
+	handle_next_level(current_level.level_number)
+
+#  FUNCTIONS FOR ALL BUTTONS IN THE DIE SCREEN
+
+func _on_RetryButton_pressed():
+	handle_next_level(current_level.level_number - 1) # Retry button essentially moves to the next level, but pretends it was on the level before
+
 
 
 #  FUNCTIONS FOR ALL BUTTONS IN MENU SCREEN
 
 func _on_TitleButton_pressed():
 	handle_next_level(-1)
+	menu_screen.visible = false
+	
+func _on_ReloadButton_pressed():
+	handle_next_level(current_level.level_number - 1) # Reload button essentially moves to the next level, but pretends it was on the level before
 	menu_screen.visible = false
 
 func _on_Level1Button_pressed():
@@ -83,4 +106,7 @@ func _on_Level9Button_pressed():
 
 func _on_Level10Button_pressed():
 	handle_next_level(9)
+	menu_screen.visible = false
+
+func _on_ExitMenuButton_pressed():
 	menu_screen.visible = false

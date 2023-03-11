@@ -38,6 +38,13 @@ margin_right = 975.0
 margin_bottom = 325.0
 text = "Die"
 
+[node name="TimeLabel" type="Label" parent="."]
+margin_left = 7.0
+margin_top = 6.0
+margin_right = 83.0
+margin_bottom = 38.0
+text = "0"
+
 [connection signal="pressed" from="NextButton" to="." method="_on_NextButton_pressed"]
 [connection signal="pressed" from="SolveButton" to="." method="_on_SolveButton_pressed"]
 [connection signal="pressed" from="DieButton" to="." method="_on_DieButton_pressed"]
