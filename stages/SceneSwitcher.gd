@@ -12,7 +12,15 @@ onready var score_message = $SolveScreen/ScoreMessage
 
 onready var die_screen = $DieScreen
 
-var max_number_levels = 3   # Set number of levels to be cycled through (including Level0 or TitleScreen)
+onready var end_screen = $EndScreen
+
+onready var final_score_message = $EndScreen/FinalScoreMessage
+
+var level_scores = [0,0,0,0,0,0,0,0,0,0]
+
+var final_score = 0
+
+export var max_number_levels = 3   # Set number of levels to be cycled through (including Level0 or TitleScreen)
 
 func _ready() -> void:
 	current_level.connect("level_changed", self, "handle_next_level")
@@ -32,11 +40,36 @@ func handle_next_level(current_level_number: int):
 	current_level = next_level
 	solve_screen.visible = false   # After a level is solved and "next" button is pressed, the solve screen should disappear
 	die_screen.visible = false    # Same as solve screen above
+	end_screen.visible = false
+	
+	# EndScreen trigger
+	if current_level.level_number + 1 == max_number_levels:
+		handle_end_screen()
+		
+func handle_end_screen():
+	end_screen.visible = true
+	final_score = final_score_sum()
+	print(final_score)
+	final_score_message.text = "Final Score: " + str(stepify(final_score, 0.01))
+	
+func final_score_sum():
+	var sum = 0
+	for score in level_scores:
+		sum += score
+	print(level_scores)
+	print(sum)
+	return sum
+	
+	
 
+# Handles when the level is solved, displays the score, saves the score to the level_scores array for the final score
 func handle_level_solved(score):
 	solve_screen.visible = true
 	score_message.text = "Score: " + str(stepify(score, 0.01))
+	if score > level_scores[current_level.level_number - 1]:
+		level_scores[current_level.level_number - 1] = score
 	
+#  Handles when one of the players die, signal from the level, asks to retry
 func handle_player_death():
 	die_screen.visible = true
 
@@ -56,6 +89,10 @@ func _on_NextButtonMain_pressed():
 func _on_RetryButton_pressed():
 	handle_next_level(current_level.level_number - 1) # Retry button essentially moves to the next level, but pretends it was on the level before
 
+#  FUNCTIONS FOR ALL BUTTONS IN END SCREEN
+
+func _on_RestartGameButton_pressed():
+	handle_next_level(current_level.level_number)
 
 
 #  FUNCTIONS FOR ALL BUTTONS IN MENU SCREEN
