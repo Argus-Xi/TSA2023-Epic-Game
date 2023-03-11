@@ -7,18 +7,37 @@ script = ExtResource( 1 )
 level_number = 1
 
 [node name="Title" type="Label" parent="."]
-margin_left = 429.0
-margin_top = 75.0
-margin_right = 564.0
-margin_bottom = 117.0
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 448.0
+margin_top = 64.0
+margin_right = 583.0
+margin_bottom = 106.0
 text = "Level 1"
 align = 1
 
 [node name="NextButton" type="Button" parent="."]
-margin_left = 434.0
-margin_top = 147.0
-margin_right = 557.0
-margin_bottom = 189.0
+visible = false
+margin_left = 448.0
+margin_top = 360.0
+margin_right = 576.0
+margin_bottom = 402.0
 text = "Next"
 
+[node name="SolveButton" type="Button" parent="."]
+margin_left = 851.0
+margin_top = 222.0
+margin_right = 974.0
+margin_bottom = 264.0
+text = "Solve"
+
+[node name="DieButton" type="Button" parent="."]
+margin_left = 852.0
+margin_top = 283.0
+margin_right = 975.0
+margin_bottom = 325.0
+text = "Die"
+
 [connection signal="pressed" from="NextButton" to="." method="_on_NextButton_pressed"]
+[connection signal="pressed" from="SolveButton" to="." method="_on_SolveButton_pressed"]
+[connection signal="pressed" from="DieButton" to="." method="_on_DieButton_pressed"]
