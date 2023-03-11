@@ -27,7 +27,9 @@ func _on_NextButton_pressed():
 #  Functions to send level events up to SceneSwitcher
 
 func solved():   # Calculates the score and sends it to the SceneSwitcher for the UI
-	score = (1 / level_time) * 100
+	score = 300 - level_time   # 300 represents a max signal strength multiplied by some constant as a y-intercept  for the score
+	if score < 100:
+		score = 100
 	emit_signal("level_solved", score)
 	level_running = false
 	
