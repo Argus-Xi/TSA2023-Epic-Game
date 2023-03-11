@@ -20,7 +20,7 @@ var level_scores = [0,0,0,0,0,0,0,0,0,0]
 
 var final_score = 0
 
-export var max_number_levels = 3   # Set number of levels to be cycled through (including Level0 or TitleScreen)
+export var max_number_levels = 12   # Set number of levels to be cycled through (including Level0 or TitleScreen)
 
 func _ready() -> void:
 	current_level.connect("level_changed", self, "handle_next_level")
@@ -49,15 +49,12 @@ func handle_next_level(current_level_number: int):
 func handle_end_screen():
 	end_screen.visible = true
 	final_score = final_score_sum()
-	print(final_score)
 	final_score_message.text = "Final Score: " + str(stepify(final_score, 0.01))
 	
 func final_score_sum():
 	var sum = 0
 	for score in level_scores:
 		sum += score
-	print(level_scores)
-	print(sum)
 	return sum
 	
 	
