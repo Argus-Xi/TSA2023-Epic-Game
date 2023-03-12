@@ -45,6 +45,7 @@ func _physics_process(delta):
 	# normalizes the velocity's direction and multiplying it by the speed and the time passed between frames
 	velocity = velocity.normalized() * speed
 
+# warning-ignore:return_value_discarded
 	move_and_slide(velocity)
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)

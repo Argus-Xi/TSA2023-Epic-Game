@@ -42,6 +42,7 @@ margin_bottom = 18.5
 color = Color( 0.00392157, 0.658824, 0.105882, 1 )
 
 [node name="GSW" type="Area2D" parent="."]
+collision_mask = 53
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GSW"]
 shape = SubResource( 2 )

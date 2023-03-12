@@ -19,5 +19,5 @@ func _process(delta):
 
 
 #  Using the boolean dead_bullet rather than immediately queue_free() gives the player or enemy time to detect the collision
-func _on_Area2D_body_entered(body):
+func _on_Area2D_body_entered(_body):
 	queue_free()
