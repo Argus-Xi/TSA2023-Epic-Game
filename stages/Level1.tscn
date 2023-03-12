@@ -51,6 +51,7 @@ margin_bottom = 264.0
 text = "Solve"
 
 [node name="DieButton" type="Button" parent="."]
+visible = false
 margin_left = 852.0
 margin_top = 283.0
 margin_right = 975.0

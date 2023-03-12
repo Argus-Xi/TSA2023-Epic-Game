@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://terrain/terrain_chasms.tres" type="TileSet" id=1]
+
+[node name="Chasms" type="TileMap"]
+tile_set = ExtResource( 1 )
+collision_layer = 32
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 0, 0, 0 )

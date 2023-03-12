@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Players/Player2.gd" type="Script" id=1]
 [ext_resource path="res://art/1200px-Blue_triangle.svg.png" type="Texture" id=2]
@@ -6,9 +6,12 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 15 )
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 20, 15 )
+
 [node name="player2" type="KinematicBody2D"]
 position = Vector2( 440, 257 )
-collision_mask = 17
+collision_mask = 49
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -37,3 +40,10 @@ visible = false
 rotation = -1.5708
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
+
+[node name="GSW" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GSW"]
+shape = SubResource( 2 )
+
+[connection signal="area_entered" from="GSW" to="." method="_on_GSW_area_entered"]

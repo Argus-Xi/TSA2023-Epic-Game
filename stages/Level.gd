@@ -14,6 +14,13 @@ var level_time = 0
 
 var score = 0
 
+func _ready():
+	
+	#  connects the level to the players' death signals, three of the 4 determinants of the level outcome, last being solved transferred from the laser receptor
+	$Player1.connect("player_death", self, "died")
+	$player2.connect("player_death", self, "died")
+	$player3.connect("player_death", self, "died")
+
 func _process(delta):
 	if level_running == true:
 		level_time += delta
