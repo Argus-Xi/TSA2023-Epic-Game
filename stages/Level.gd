@@ -20,6 +20,9 @@ func _ready():
 	$Player1.connect("player_death", self, "died")
 	$player2.connect("player_death", self, "died")
 	$player3.connect("player_death", self, "died")
+	
+	#  connects the level to the emitter's "end_level" signal to know when to end the level
+	$Emitter.connect("end_level", self, "solved")
 
 func _process(delta):
 	if level_running == true:
