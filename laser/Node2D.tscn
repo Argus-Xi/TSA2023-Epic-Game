@@ -1,0 +1,21 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="StaticBody2D"]
+position = Vector2( 205, 278 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 370, -45 )
+polygon = PoolVector2Array( 163, 105, 91, 231, 247, 279, 266, 167 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+position = Vector2( -61, -210 )
+scale = Vector2( 0.459631, 1.3043 )
+polygon = PoolVector2Array( 1, -2, 692.591, 21, 809, 59, 18, 42 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
+position = Vector2( 260, -184 )
+polygon = PoolVector2Array( 0, -2, 455, 122, 355, 319, 52, 57 )
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color( 0.486275, 0.192157, 0.192157, 1 )
+polygon = PoolVector2Array( -65, -214, -52, -160, 306, -136, 530, 63, 464, 185, 615, 235, 634, 120, 623, 116, 714, -62, 255, -186 )

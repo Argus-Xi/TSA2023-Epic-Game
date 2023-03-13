@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://laser/Amplifier.tscn" type="PackedScene" id=1]
+[ext_resource path="res://laser/Emitter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://laser/Mirror.tscn" type="PackedScene" id=3]
+[ext_resource path="res://laser/Reciever.tscn" type="PackedScene" id=4]
+[ext_resource path="res://laser/Node2D.tscn" type="PackedScene" id=5]
+
+[node name="laserTestScene" type="Node2D"]
+
+[node name="Emitter" parent="." instance=ExtResource( 2 )]
+position = Vector2( 179, 329 )
+collision_layer = 2
+collision_mask = 2
+
+[node name="Mirror" parent="." instance=ExtResource( 3 )]
+position = Vector2( 804, 331 )
+
+[node name="Amplifier" parent="." instance=ExtResource( 1 )]
+position = Vector2( 192, 432 )
+
+[node name="Reciever" parent="." instance=ExtResource( 4 )]
+position = Vector2( 51, 108 )
+
+[node name="Node2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( 286, 262 )
+
+[node name="Mirror2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 553, 494 )
+
+[node name="Amplifier2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 681, 285 )
+rotation = 1.60919
+
+[node name="Amplifier3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 109, 167 )
+rotation = -2.40332
