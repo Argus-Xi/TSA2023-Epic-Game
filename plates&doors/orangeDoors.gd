@@ -27,9 +27,14 @@ func check_states():
 		if state:
 			doors_up = false
 	if doors_up:
-		tile_set.tile_set_texture(0, bright_texture)
+		# Goes through each of the tiles in an array of all the tiles, which are also arrays apparently, and gets their position and sets their tile ID to a new tile with that tile ID, so in the tileset, it'll need the 0 and 1 tile ID's
+		for tile in get_used_cells():
+			set_cell(tile[0], tile[1], 0)
 		collision_layer = 16
 	elif !doors_up:
-		tile_set.tile_set_texture(0, dark_texture)
+		# Same as comment above
+		for tile in get_used_cells():
+			set_cell(tile[0], tile[1], 1)
 		collision_layer = 64
+	print("tileset" + str(get_tileset()))
 	

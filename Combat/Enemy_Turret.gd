@@ -24,9 +24,10 @@ func _ready():
 func _process(delta):
 	if !player_found: # function to sweep through searching for player
 		rotation += rotation_speed * delta
-		if player_detection_ray.is_colliding() && player_detection_ray.get_collider().get_collision_layer() == 1:  # HEAVY DEBUG NEEDED HERE - can't access get_collision_layer()
-			player_found = true
-			timestepper = 0
+		if player_detection_ray.get_collider() != null:  #  checks if the collider exists (in case of cracked walls, it deletes, which leaves no collider for the raycast to access)
+			if player_detection_ray.is_colliding() && player_detection_ray.get_collider().get_collision_layer() == 1:  # HEAVY DEBUG NEEDED HERE - can't access get_collision_layer()
+				player_found = true
+				timestepper = 0
 	if player_found:  # if the player is found, wait a certain amount of time
 		timestepper += delta
 		if timestepper < gunload_time:
