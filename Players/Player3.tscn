@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Players/Player3.gd" type="Script" id=1]
 [ext_resource path="res://art/1200px-Green_triangle.svg.png" type="Texture" id=2]
+[ext_resource path="res://laser/Mirror.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 15 )
@@ -46,5 +47,8 @@ collision_mask = 53
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GSW"]
 shape = SubResource( 2 )
+
+[node name="Mirror" parent="." instance=ExtResource( 3 )]
+rotation = 1.5708
 
 [connection signal="area_entered" from="GSW" to="." method="_on_GSW_area_entered"]

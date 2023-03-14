@@ -48,7 +48,7 @@ func _physics_process(delta):
 	move_and_slide(velocity)
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
-
+	
 #  Detects if the player's been hit
 func _on_GSW_area_entered(area):
 	if area.collision_layer == 8:
