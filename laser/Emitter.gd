@@ -15,7 +15,7 @@ func _physics_process(delta):
 	
 	#define initial raycast
 	ray.global_position = line.global_position
-	ray.cast_to = Vector2(1000000,0).rotated(rotation) #(get_global_mouse_position()-line.global_position).normalized()*1000
+	ray.cast_to = Vector2(10000,0) #(get_global_mouse_position()-line.global_position).normalized()*1000
 	ray.force_raycast_update()
 	
 	var prev = null
