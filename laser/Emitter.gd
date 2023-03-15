@@ -2,6 +2,8 @@ extends StaticBody2D
 
 var max_bounces = 25
 
+var reciever_been_hit = false
+
 onready var ray = $RayCast2D
 onready var line = $Line2D
 
@@ -34,7 +36,9 @@ func _physics_process(delta):
 		line.add_point(line.to_local(pt))
 		
 		if coll.is_in_group("Receivers"):
-			emit_signal("end_level")
+			if !reciever_been_hit:
+				emit_signal("end_level")
+				reciever_been_hit = true
 		
 		if not coll.is_in_group("Mirrors"):
 			if not coll.is_in_group("Amplifiers"):

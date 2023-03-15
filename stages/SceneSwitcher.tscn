@@ -195,11 +195,12 @@ margin_bottom = 272.0
 text = "Exit Menu"
 
 [node name="MenuButton" type="Button" parent="."]
-margin_left = 948.0
-margin_top = 15.0
-margin_right = 990.0
-margin_bottom = 52.0
+margin_left = 969.0
+margin_top = 9.0
+margin_right = 1017.0
+margin_bottom = 46.0
 text = "Menu"
+flat = true
 
 [connection signal="pressed" from="SolveScreen/NextButtonMain" to="." method="_on_NextButtonMain_pressed"]
 [connection signal="pressed" from="DieScreen/RetryButton" to="." method="_on_RetryButton_pressed"]
