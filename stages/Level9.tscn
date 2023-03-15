@@ -1,0 +1,122 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://stages/Level.gd" type="Script" id=1]
+[ext_resource path="res://Players/Player1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Players/Player3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Players/Player2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://laser/Emitter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://laser/Reciever.tscn" type="PackedScene" id=6]
+[ext_resource path="res://terrain/cracked_walls.tscn" type="PackedScene" id=7]
+[ext_resource path="res://terrain/wall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://terrain/Border_walls.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Combat/Enemy_Turret.tscn" type="PackedScene" id=10]
+
+[node name="Level9" type="Node2D"]
+script = ExtResource( 1 )
+level_number = 9
+
+[node name="terrainWalls" parent="." instance=ExtResource( 8 )]
+tile_data = PoolIntArray( 1, 0, 0, 8, 0, 0, 12, 0, 0, 13, 0, 0, 15, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65551, 0, 0, 131076, 0, 0, 131084, 0, 0, 131085, 0, 0, 131087, 0, 0, 196612, 0, 0, 196618, 0, 0, 196623, 0, 0, 262145, 0, 0, 262152, 0, 0, 262154, 0, 0, 262159, 0, 0, 327681, 0, 0, 327682, 0, 0, 327688, 0, 0, 327690, 0, 0, 327691, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458758, 0, 0, 458759, 0, 0, 458765, 0, 0, 524299, 0, 0, 524301, 0, 0, 524302, 0, 0 )
+
+[node name="BorderWall" parent="." instance=ExtResource( 9 )]
+
+[node name="CrackedWallsContainer" type="Node" parent="."]
+
+[node name="CrackedWall" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
+position = Vector2( 256, 0 )
+
+[node name="CrackedWall2" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
+position = Vector2( 384, 128 )
+
+[node name="CrackedWall3" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
+position = Vector2( 256, 256 )
+
+[node name="CrackedWall4" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
+position = Vector2( 192, 256 )
+
+[node name="CrackedWall5" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
+position = Vector2( 832, 384 )
+
+[node name="CrackedWall6" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
+position = Vector2( 832, 320 )
+
+[node name="CrackedWall7" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
+position = Vector2( 896, 256 )
+
+[node name="CrackedWall8" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
+position = Vector2( 576, 320 )
+
+[node name="CrackedWall9" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
+position = Vector2( 384, 320 )
+
+[node name="CrackedWall10" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
+position = Vector2( 448, 320 )
+
+[node name="CrackedWall11" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
+position = Vector2( 192, 512 )
+
+[node name="CrackedWall12" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
+position = Vector2( 64, 384 )
+
+[node name="CrackedWall13" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
+position = Vector2( 640, 128 )
+
+[node name="CrackedWall14" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
+position = Vector2( 768, 192 )
+
+[node name="CrackedWall15" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
+position = Vector2( 704, 384 )
+
+[node name="CrackedWall16" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
+position = Vector2( 576, 448 )
+
+[node name="Enemy" parent="." instance=ExtResource( 10 )]
+position = Vector2( 544, 160 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 352, 480 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 800, 288 )
+
+[node name="Player1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 160, 224 )
+
+[node name="player2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 224, 224 )
+
+[node name="player3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 96, 224 )
+
+[node name="Emitter" parent="." instance=ExtResource( 5 )]
+position = Vector2( 32, 160 )
+
+[node name="Reciever" parent="." instance=ExtResource( 6 )]
+position = Vector2( 992, 480 )
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 440.0
+margin_top = 584.0
+margin_right = 588.0
+margin_bottom = 626.0
+text = "9: Lost in Transmission"
+align = 1
+
+[node name="NextButton" type="Button" parent="."]
+visible = false
+margin_left = 448.0
+margin_top = 360.0
+margin_right = 576.0
+margin_bottom = 402.0
+text = "Next"
+
+[node name="TimeLabel" type="Label" parent="."]
+margin_left = 7.0
+margin_top = 581.0
+margin_right = 83.0
+margin_bottom = 613.0
+text = "0"
+
+[connection signal="pressed" from="NextButton" to="." method="_on_NextButton_pressed"]

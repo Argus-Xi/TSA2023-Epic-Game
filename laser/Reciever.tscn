@@ -8,8 +8,10 @@ extents = Vector2( 23.5, 25.5 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 23, 24 )
 
-[node name="Reciever" type="StaticBody2D"]
+[node name="Reciever" type="StaticBody2D" groups=["Receivers"]]
 position = Vector2( 424, 169 )
+collision_layer = 2
+collision_mask = 2
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -20,6 +22,7 @@ position = Vector2( 0.5, -0.5 )
 shape = SubResource( 1 )
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2( 0, -1 )
 color = Color( 0.0980392, 0.745098, 0.262745, 1 )
 polygon = PoolVector2Array( -24, -26, -24, 23, 23, 24, 23, -27 )
 

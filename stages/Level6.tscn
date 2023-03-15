@@ -1,0 +1,104 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://stages/Level.gd" type="Script" id=1]
+[ext_resource path="res://Players/Player1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Players/Player3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Players/Player2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://laser/Emitter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://terrain/Border_walls.tscn" type="PackedScene" id=6]
+[ext_resource path="res://terrain/wall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://plates&doors/orangePlate.tscn" type="PackedScene" id=8]
+[ext_resource path="res://terrain/cracked_walls.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Combat/Enemy_Turret.tscn" type="PackedScene" id=10]
+[ext_resource path="res://plates&doors/orangeDoors.tscn" type="PackedScene" id=11]
+[ext_resource path="res://laser/Reciever.tscn" type="PackedScene" id=13]
+[ext_resource path="res://laser/Amplifier.tscn" type="PackedScene" id=14]
+
+[node name="Level6" type="Node2D"]
+script = ExtResource( 1 )
+level_number = 6
+
+[node name="OrangeDoors" parent="." instance=ExtResource( 11 )]
+tile_data = PoolIntArray( 6, 0, 0, 65542, 0, 0 )
+
+[node name="orangePlate" parent="OrangeDoors" instance=ExtResource( 8 )]
+position = Vector2( 992, 32 )
+
+[node name="BorderWall" parent="." instance=ExtResource( 6 )]
+
+[node name="terrainWalls" parent="." instance=ExtResource( 7 )]
+tile_data = PoolIntArray( 5, 0, 0, 11, 0, 0, 12, 0, 0, 65547, 0, 0, 65548, 0, 0, 131077, 0, 0, 131083, 0, 0, 196613, 0, 0, 196616, 0, 0, 196619, 0, 0, 262152, 0, 0, 262155, 0, 0, 327688, 0, 0, 393223, 0, 0, 393224, 0, 0, 458759, 0, 0, 458760, 0, 0, 524295, 0, 0, 524296, 0, 0 )
+
+[node name="Enemy" parent="." instance=ExtResource( 10 )]
+position = Vector2( 800, 544 )
+
+[node name="crackedWallsContainer" type="Node" parent="."]
+
+[node name="CrackedWall" parent="crackedWallsContainer" instance=ExtResource( 9 )]
+position = Vector2( 256, 0 )
+
+[node name="CrackedWall2" parent="crackedWallsContainer" instance=ExtResource( 9 )]
+position = Vector2( 256, 64 )
+
+[node name="Player1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96, 224 )
+
+[node name="player2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 96, 288 )
+
+[node name="player3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 96, 352 )
+
+[node name="Amplifier" parent="." instance=ExtResource( 14 )]
+position = Vector2( 352, 96 )
+
+[node name="Reciever" parent="." instance=ExtResource( 13 )]
+position = Vector2( 992, 160 )
+
+[node name="Emitter" parent="." instance=ExtResource( 5 )]
+position = Vector2( 32, 96 )
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 448.0
+margin_top = 584.0
+margin_right = 576.0
+margin_bottom = 626.0
+text = "6: Over and Out"
+align = 1
+
+[node name="NextButton" type="Button" parent="."]
+visible = false
+margin_left = 448.0
+margin_top = 360.0
+margin_right = 576.0
+margin_bottom = 402.0
+text = "Next"
+
+[node name="SolveButton" type="Button" parent="."]
+visible = false
+margin_left = 851.0
+margin_top = 222.0
+margin_right = 974.0
+margin_bottom = 264.0
+text = "Solve"
+
+[node name="DieButton" type="Button" parent="."]
+visible = false
+margin_left = 852.0
+margin_top = 283.0
+margin_right = 975.0
+margin_bottom = 325.0
+text = "Die"
+
+[node name="TimeLabel" type="Label" parent="."]
+margin_left = 7.0
+margin_top = 581.0
+margin_right = 83.0
+margin_bottom = 613.0
+text = "0"
+
+[connection signal="pressed" from="NextButton" to="." method="_on_NextButton_pressed"]
+[connection signal="pressed" from="SolveButton" to="." method="_on_SolveButton_pressed"]
+[connection signal="pressed" from="DieButton" to="." method="_on_DieButton_pressed"]

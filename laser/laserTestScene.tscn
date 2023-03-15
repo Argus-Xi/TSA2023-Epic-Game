@@ -10,8 +10,6 @@
 
 [node name="Emitter" parent="." instance=ExtResource( 2 )]
 position = Vector2( 179, 329 )
-collision_layer = 2
-collision_mask = 2
 
 [node name="Mirror" parent="." instance=ExtResource( 3 )]
 position = Vector2( 804, 331 )

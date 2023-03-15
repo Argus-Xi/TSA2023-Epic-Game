@@ -1,0 +1,188 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://stages/Level.gd" type="Script" id=1]
+[ext_resource path="res://Players/Player1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Players/Player3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Players/Player2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://laser/Emitter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://laser/Reciever.tscn" type="PackedScene" id=6]
+[ext_resource path="res://laser/Amplifier.tscn" type="PackedScene" id=7]
+[ext_resource path="res://terrain/wall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://terrain/Border_walls.tscn" type="PackedScene" id=9]
+
+[node name="Level10" type="Node2D"]
+script = ExtResource( 1 )
+level_number = 10
+
+[node name="BorderWall" parent="." instance=ExtResource( 9 )]
+
+[node name="terrainWalls" parent="." instance=ExtResource( 8 )]
+tile_data = PoolIntArray( 65548, 0, 0, 196609, 0, 0, 196615, 0, 0, 196619, 0, 0, 196621, 0, 0, 196623, 0, 0, 327681, 0, 0, 327686, 0, 0, 327691, 0, 0, 327693, 0, 0, 327695, 0, 0, 458755, 0, 0 )
+
+[node name="Player1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96, 160 )
+
+[node name="player2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 96, 96 )
+
+[node name="player3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 32, 96 )
+
+[node name="Amplifier" parent="." instance=ExtResource( 7 )]
+position = Vector2( 288, 288 )
+rotation = 3.14159
+
+[node name="Amplifier2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 424, 288 )
+
+[node name="Amplifier3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 288, 416 )
+
+[node name="Amplifier4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 544, 288 )
+
+[node name="Amplifier5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 672, 288 )
+rotation = -1.5708
+
+[node name="Amplifier6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 160, 416 )
+
+[node name="Amplifier7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 416, 416 )
+
+[node name="Amplifier8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 544, 416 )
+
+[node name="Amplifier9" parent="." instance=ExtResource( 7 )]
+position = Vector2( 800, 160 )
+rotation = 1.5708
+
+[node name="Amplifier10" parent="." instance=ExtResource( 7 )]
+position = Vector2( 800, 288 )
+
+[node name="Amplifier11" parent="." instance=ExtResource( 7 )]
+position = Vector2( 672, 160 )
+rotation = -1.5708
+
+[node name="Amplifier12" parent="." instance=ExtResource( 7 )]
+position = Vector2( 544, 160 )
+rotation = 3.14159
+
+[node name="Amplifier13" parent="." instance=ExtResource( 7 )]
+position = Vector2( 416, 160 )
+rotation = 1.5708
+
+[node name="Amplifier14" parent="." instance=ExtResource( 7 )]
+position = Vector2( 288, 160 )
+rotation = 1.5708
+
+[node name="Amplifier15" parent="." instance=ExtResource( 7 )]
+position = Vector2( 160, 544 )
+
+[node name="Amplifier16" parent="." instance=ExtResource( 7 )]
+position = Vector2( 288, 544 )
+rotation = -1.5708
+
+[node name="Amplifier17" parent="." instance=ExtResource( 7 )]
+position = Vector2( 672, 416 )
+rotation = 1.5708
+
+[node name="Amplifier18" parent="." instance=ExtResource( 7 )]
+position = Vector2( 416, 544 )
+rotation = 3.14159
+
+[node name="Amplifier19" parent="." instance=ExtResource( 7 )]
+position = Vector2( 544, 544 )
+rotation = 3.14159
+
+[node name="Amplifier20" parent="." instance=ExtResource( 7 )]
+position = Vector2( 672, 544 )
+rotation = 3.14159
+
+[node name="Amplifier21" parent="." instance=ExtResource( 7 )]
+position = Vector2( 800, 544 )
+rotation = 3.14159
+
+[node name="Amplifier22" parent="." instance=ExtResource( 7 )]
+position = Vector2( 928, 416 )
+rotation = 1.5708
+
+[node name="Amplifier23" parent="." instance=ExtResource( 7 )]
+position = Vector2( 928, 288 )
+
+[node name="Amplifier24" parent="." instance=ExtResource( 7 )]
+position = Vector2( 800, 416 )
+
+[node name="Amplifier25" parent="." instance=ExtResource( 7 )]
+position = Vector2( 928, 160 )
+rotation = -1.5708
+
+[node name="Amplifier26" parent="." instance=ExtResource( 7 )]
+position = Vector2( 936, 32 )
+
+[node name="Amplifier27" parent="." instance=ExtResource( 7 )]
+position = Vector2( 800, 32 )
+rotation = 3.14159
+
+[node name="Amplifier28" parent="." instance=ExtResource( 7 )]
+position = Vector2( 672, 32 )
+rotation = 3.14159
+
+[node name="Amplifier29" parent="." instance=ExtResource( 7 )]
+position = Vector2( 544, 32 )
+rotation = 1.5708
+
+[node name="Amplifier30" parent="." instance=ExtResource( 7 )]
+position = Vector2( 416, 32 )
+
+[node name="Amplifier31" parent="." instance=ExtResource( 7 )]
+position = Vector2( 928, 544 )
+rotation = 3.14159
+
+[node name="Amplifier32" parent="." instance=ExtResource( 7 )]
+position = Vector2( 288, 32 )
+rotation = 3.14159
+
+[node name="Amplifier33" parent="." instance=ExtResource( 7 )]
+position = Vector2( 160, 32 )
+
+[node name="Amplifier34" parent="." instance=ExtResource( 7 )]
+position = Vector2( 160, 160 )
+
+[node name="Amplifier35" parent="." instance=ExtResource( 7 )]
+position = Vector2( 160, 288 )
+rotation = 1.5708
+
+[node name="Emitter" parent="." instance=ExtResource( 5 )]
+position = Vector2( 32, 288 )
+
+[node name="Reciever" parent="." instance=ExtResource( 6 )]
+position = Vector2( 992, 288 )
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = 448.0
+margin_top = 584.0
+margin_right = 583.0
+margin_bottom = 626.0
+text = "10: Overextended"
+align = 1
+
+[node name="NextButton" type="Button" parent="."]
+visible = false
+margin_left = 448.0
+margin_top = 360.0
+margin_right = 576.0
+margin_bottom = 402.0
+text = "Next"
+
+[node name="TimeLabel" type="Label" parent="."]
+margin_left = 7.0
+margin_top = 581.0
+margin_right = 83.0
+margin_bottom = 613.0
+text = "0"
+
+[connection signal="pressed" from="NextButton" to="." method="_on_NextButton_pressed"]

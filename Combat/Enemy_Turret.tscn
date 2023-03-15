@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Combat/Enemy_Turret.gd" type="Script" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 20.0
+
+[node name="Enemy" type="KinematicBody2D"]
+collision_layer = 4
+collision_mask = 6
+script = ExtResource( 1 )
+
+[node name="Temp_Sprite" type="ColorRect" parent="."]
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+color = Color( 0.168627, 0.00784314, 0.00784314, 1 )
+
+[node name="Nozzle" type="ColorRect" parent="Temp_Sprite"]
+margin_left = 35.0
+margin_top = 17.0
+margin_right = 45.0
+margin_bottom = 23.0
+color = Color( 0.137255, 0.188235, 0.192157, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+
+[node name="PlayerDetection" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 1000, 0 )
+collision_mask = 17
+
+[node name="GSW" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GSW"]
+shape = SubResource( 2 )
+
+[connection signal="area_entered" from="GSW" to="." method="_on_GSW_area_entered"]
