@@ -33,4 +33,3 @@ func check_states():
 		for tile in get_used_cells():
 			set_cell(tile[0], tile[1], 1)
 		set_collision_layer(64)
-	print(collision_layer)

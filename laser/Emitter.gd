@@ -19,6 +19,7 @@ func _physics_process(delta):
 	ray.force_raycast_update()
 	
 	var prev = null
+	
 	var bounces = 0
 	
 	while true:
@@ -34,7 +35,6 @@ func _physics_process(delta):
 		
 		if coll.is_in_group("Receivers"):
 			emit_signal("end_level")
-			print("the level has been solved")
 		
 		if not coll.is_in_group("Mirrors"):
 			if not coll.is_in_group("Amplifiers"):
@@ -65,11 +65,10 @@ func _physics_process(delta):
 			ray.global_position = coll.position
 			ray.cast_to = coll.position + (Vector2(1000, 0).rotated(coll.rotation)) * 1000 - position
 			ray.force_raycast_update()
-		else:
 			
-			bounces += 1
-			if bounces >= max_bounces:
-				break
+		bounces += 1
+		if bounces >= max_bounces:
+			break
 		
 	if prev != null:
 		prev.collision_mask = 2
