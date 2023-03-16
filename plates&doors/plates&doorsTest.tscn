@@ -43,7 +43,7 @@ position = Vector2( 122, 290 )
 position = Vector2( 303, 365 )
 
 [node name="Enemy" parent="." instance=ExtResource( 5 )]
-position = Vector2( 539, 86 )
+position = Vector2( 198, 153 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 6 )

@@ -19,7 +19,7 @@ func hard_colliding_check():
 	elif len(get_overlapping_bodies()) > 0: # If there's overlapping bodies, go through each one, check if any of them are players or enemies, and if they are, send state as true. If they aren't, send state as false
 		var being_pressed = false
 		for collider in get_overlapping_bodies():
-			if collider.collision_layer == 1 or collider.collision_layer == 2:
+			if collider.collision_layer == 1 or 3:
 				being_pressed = true
 			else:
 				pass
