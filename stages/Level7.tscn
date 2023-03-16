@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Players/Player1.tscn" type="PackedScene" id=2]
@@ -13,10 +13,13 @@
 [ext_resource path="res://plates&doors/bluePlate.tscn" type="PackedScene" id=11]
 [ext_resource path="res://laser/Reciever.tscn" type="PackedScene" id=12]
 [ext_resource path="res://plates&doors/orangeDoors.tscn" type="PackedScene" id=13]
+[ext_resource path="res://terrain/floor.tscn" type="PackedScene" id=14]
 
 [node name="Level7" type="Node2D"]
 script = ExtResource( 1 )
 level_number = 7
+
+[node name="Floor" parent="." instance=ExtResource( 14 )]
 
 [node name="BlueDoors" parent="." instance=ExtResource( 7 )]
 tile_data = PoolIntArray( 131075, 0, 0, 131076, 0, 0 )

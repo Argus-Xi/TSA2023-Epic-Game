@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://plates&doors/orangeDoors.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Players/Player3.tscn" type="PackedScene" id=2]
@@ -12,20 +12,23 @@
 [ext_resource path="res://plates&doors/bluePlate.tscn" type="PackedScene" id=10]
 [ext_resource path="res://plates&doors/purplePlate.tscn" type="PackedScene" id=11]
 [ext_resource path="res://plates&doors/purpleDoors.tscn" type="PackedScene" id=12]
+[ext_resource path="res://terrain/floor.tscn" type="PackedScene" id=13]
 
 [node name="plates&doorsTest" type="Node"]
+
+[node name="Floor" parent="." instance=ExtResource( 13 )]
 
 [node name="OrangeDoors" parent="." instance=ExtResource( 1 )]
 tile_data = PoolIntArray( 4, 0, 0, 65540, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0, 131081, 0, 0 )
 
 [node name="orangePlate1" parent="OrangeDoors" instance=ExtResource( 8 )]
-position = Vector2( 218, 154 )
+position = Vector2( 224, 160 )
 
 [node name="BlueDoors" parent="." instance=ExtResource( 9 )]
 tile_data = PoolIntArray( 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 196619, 0, 0, 196620, 0, 0, 262156, 0, 0, 327692, 0, 0, 393228, 0, 0, 458764, 0, 0 )
 
 [node name="bluePlate1" parent="BlueDoors" instance=ExtResource( 10 )]
-position = Vector2( 532, 379 )
+position = Vector2( 544, 352 )
 
 [node name="PurpleDoors" parent="." instance=ExtResource( 12 )]
 tile_data = PoolIntArray( 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 327691, 0, 0, 393227, 0, 0, 458763, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0 )

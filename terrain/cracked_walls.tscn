@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://art/subtle-cracked-wall-paint-pattern-30806184 (1).jpg" type="Texture" id=1]
+[ext_resource path="res://art/mainSpriteSheet.png" type="Texture" id=1]
 [ext_resource path="res://terrain/cracked_walls.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -18,6 +18,8 @@ shape = SubResource( 1 )
 [node name="Subtle-cracked-wall-paint-pattern-30806184(1)" type="Sprite" parent="."]
 position = Vector2( 32, 32 )
 texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 146.765, 222.516, 64, 64 )
 
 [node name="GSW" type="Area2D" parent="."]
 

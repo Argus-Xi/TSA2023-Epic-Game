@@ -28,6 +28,10 @@ func _ready() -> void:
 	current_level.connect("player_died", self, "handle_player_death")
 
 func handle_next_level(current_level_number: int):
+	solve_screen.visible = false   # After a level is solved and "next" button is pressed, the solve screen should disappear
+	die_screen.visible = false    # Same as solve screen above
+	end_screen.visible = false
+	
 	var next_level
 	if current_level_number + 1 >= max_number_levels:  # checks whether or not it's the last level, cycles back to title screen if it is
 		current_level_number = -1
@@ -38,9 +42,6 @@ func handle_next_level(current_level_number: int):
 	next_level.connect("player_died", self, "handle_player_death")
 	current_level.queue_free()
 	current_level = next_level
-	solve_screen.visible = false   # After a level is solved and "next" button is pressed, the solve screen should disappear
-	die_screen.visible = false    # Same as solve screen above
-	end_screen.visible = false
 	
 	# EndScreen trigger
 	if current_level.level_number + 1 == max_number_levels:

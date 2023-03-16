@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Players/Player1.gd" type="Script" id=1]
-[ext_resource path="res://art/Red_Triangle.png" type="Texture" id=2]
+[ext_resource path="res://art/mainSpriteSheet.png" type="Texture" id=2]
 [ext_resource path="res://laser/Mirror.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -23,6 +23,7 @@ speed = 200
 shape = SubResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_left = -20.0
 margin_top = -15.0
 margin_right = 20.0
@@ -36,19 +37,21 @@ margin_right = 45.0
 margin_bottom = 18.5
 color = Color( 0.784314, 0.121569, 0.121569, 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-visible = false
-rotation = -1.5708
-scale = Vector2( 0.45, 0.45 )
-texture = ExtResource( 2 )
-
 [node name="GSW" type="Area2D" parent="."]
 collision_mask = 61
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GSW"]
 shape = SubResource( 2 )
 
+[node name="Sprite" type="Sprite" parent="."]
+rotation = -1.5708
+scale = Vector2( 0.623008, 0.653291 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 15.4056, 92.2238, 65.7198, 66.008 )
+
 [node name="Mirror" parent="." instance=ExtResource( 3 )]
+position = Vector2( -11, 0 )
 rotation = 1.5708
 
 [connection signal="area_entered" from="GSW" to="." method="_on_GSW_area_entered"]

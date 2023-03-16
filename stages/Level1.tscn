@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://stages/Level.gd" type="Script" id=1]
 [ext_resource path="res://Players/Player1.tscn" type="PackedScene" id=2]
@@ -7,12 +7,15 @@
 [ext_resource path="res://Players/Player2.tscn" type="PackedScene" id=5]
 [ext_resource path="res://terrain/Border_walls.tscn" type="PackedScene" id=6]
 [ext_resource path="res://terrain/cracked_walls.tscn" type="PackedScene" id=7]
+[ext_resource path="res://terrain/floor.tscn" type="PackedScene" id=8]
 [ext_resource path="res://laser/Emitter.tscn" type="PackedScene" id=9]
 [ext_resource path="res://laser/Reciever.tscn" type="PackedScene" id=10]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 1 )
 level_number = 1
+
+[node name="Floor" parent="." instance=ExtResource( 8 )]
 
 [node name="Player1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 848, 360 )

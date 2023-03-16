@@ -38,6 +38,7 @@ func _physics_process(delta):
 		if coll.is_in_group("Receivers"):
 			if !reciever_been_hit:
 				emit_signal("end_level")
+				print("the end level signal has been sent")
 				reciever_been_hit = true
 		
 		if not coll.is_in_group("Mirrors"):
@@ -66,6 +67,7 @@ func _physics_process(delta):
 			ray.cast_to = ray.cast_to.bounce(normal)
 			ray.force_raycast_update()
 		elif coll.is_in_group("Amplifiers"):
+			line.add_point(line.to_local(coll.position))
 			ray.global_position = coll.position
 			ray.cast_to = coll.position + (Vector2(1000, 0).rotated(coll.rotation)) * 1000 - position
 			ray.force_raycast_update()

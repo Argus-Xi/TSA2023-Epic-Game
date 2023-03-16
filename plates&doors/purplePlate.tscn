@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://plates&doors/orangePlates.gd" type="Script" id=1]
-[ext_resource path="res://art/purplePlate.png" type="Texture" id=2]
+[ext_resource path="res://art/mainSpriteSheet.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
@@ -14,3 +14,5 @@ shape = SubResource( 1 )
 
 [node name="OrangePlateSprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 278, 223, 64, 64 )
