@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://stages/Level0.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stages/SceneSwitcher.gd" type="Script" id=2]
 [ext_resource path="res://stages/MenuScreen.gd" type="Script" id=3]
+[ext_resource path="res://art/password-infinity-123276.mp3" type="AudioStream" id=4]
 
 [node name="SceneSwitcher" type="Node"]
 script = ExtResource( 2 )
@@ -76,7 +77,7 @@ margin_left = 144.0
 margin_top = 32.0
 margin_right = 352.0
 margin_bottom = 72.0
-text = "You have completed the game"
+text = "You have completed the game!"
 align = 1
 
 [node name="FinalScoreMessage" type="Label" parent="EndScreen"]
@@ -92,7 +93,7 @@ margin_left = 184.0
 margin_top = 160.0
 margin_right = 312.0
 margin_bottom = 200.0
-text = "Restart Game"
+text = "Restart"
 
 [node name="MenuScreen" type="ColorRect" parent="."]
 visible = false
@@ -201,6 +202,11 @@ margin_right = 1017.0
 margin_bottom = 46.0
 text = "Menu"
 flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -20.0
+autoplay = true
 
 [connection signal="pressed" from="SolveScreen/NextButtonMain" to="." method="_on_NextButtonMain_pressed"]
 [connection signal="pressed" from="DieScreen/RetryButton" to="." method="_on_RetryButton_pressed"]

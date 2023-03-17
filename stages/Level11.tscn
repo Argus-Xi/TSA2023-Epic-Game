@@ -11,16 +11,13 @@ script = ExtResource( 1 )
 level_number = 11
 
 [node name="Player1" parent="." instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 324, 261 )
+position = Vector2( 96, 224 )
 
 [node name="player2" parent="." instance=ExtResource( 4 )]
-visible = false
-position = Vector2( 486, 264 )
+position = Vector2( 512, 448 )
 
 [node name="player3" parent="." instance=ExtResource( 3 )]
-visible = false
-position = Vector2( 646, 267 )
+position = Vector2( 928, 224 )
 
 [node name="Emitter" parent="." instance=ExtResource( 5 )]
 visible = false
@@ -32,7 +29,7 @@ margin_left = 448.0
 margin_top = 64.0
 margin_right = 583.0
 margin_bottom = 106.0
-text = "Endscreen
+text = "
 "
 align = 1
 

@@ -102,6 +102,14 @@ margin_right = 83.0
 margin_bottom = 613.0
 text = "0"
 
+[node name="Label" type="Label" parent="."]
+margin_left = 456.0
+margin_top = 8.0
+margin_right = 706.0
+margin_bottom = 39.0
+text = "Extenders will launch a received 
+signal in their own direction"
+
 [connection signal="pressed" from="NextButton" to="." method="_on_NextButton_pressed"]
 [connection signal="pressed" from="SolveButton" to="." method="_on_SolveButton_pressed"]
 [connection signal="pressed" from="DieButton" to="." method="_on_DieButton_pressed"]

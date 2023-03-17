@@ -49,6 +49,14 @@ position = Vector2( 384, 192 )
 [node name="CrackedWall5" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
 position = Vector2( 640, 384 )
 
+[node name="Label" type="Label" parent="CrackedWallsContainer/CrackedWall5"]
+margin_left = 80.0
+margin_top = 32.0
+margin_right = 216.0
+margin_bottom = 96.0
+text = "Cracked walls can be
+broken"
+
 [node name="CrackedWall6" parent="CrackedWallsContainer" instance=ExtResource( 7 )]
 position = Vector2( 640, 448 )
 
@@ -103,6 +111,13 @@ margin_top = 581.0
 margin_right = 83.0
 margin_bottom = 613.0
 text = "0"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 80.0
+margin_top = 168.0
+margin_right = 216.0
+margin_bottom = 232.0
+text = "Direct the laser to this receiver"
 
 [connection signal="pressed" from="NextButton" to="." method="_on_NextButton_pressed"]
 [connection signal="pressed" from="SolveButton" to="." method="_on_SolveButton_pressed"]

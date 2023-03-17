@@ -1,15 +1,55 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://stages/TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://terrain/Border_walls.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Players/Player2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Players/Player1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Players/Player3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://art/BigFont.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Combat/Enemy_Turret.tscn" type="PackedScene" id=8]
+[ext_resource path="res://terrain/wall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://laser/Emitter.tscn" type="PackedScene" id=10]
 
 [node name="TitleScreen" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="BorderWall" parent="." instance=ExtResource( 2 )]
+
+[node name="terrainWalls" parent="." instance=ExtResource( 9 )]
+tile_data = PoolIntArray( 5, 0, 0, 10, 0, 0, 65541, 0, 0, 65546, 0, 0, 131077, 0, 0, 131082, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 196616, 0, 0, 196617, 0, 0, 196618, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327690, 0, 0, 327691, 0, 0, 327692, 0, 0, 327693, 0, 0, 327694, 0, 0, 327695, 0, 0, 393217, 0, 0, 393230, 0, 0, 458753, 0, 0, 458766, 0, 0, 524289, 0, 0, 524302, 0, 0 )
+
+[node name="Player1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 160, 160 )
+rotation = -1.5708
+
+[node name="player2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 512, 288 )
+rotation = -1.5708
+
+[node name="player3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 864, 160 )
+rotation = -1.5708
+
+[node name="Enemy" parent="." instance=ExtResource( 8 )]
+position = Vector2( 160, 416 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 864, 416 )
+
+[node name="Emitter" parent="." instance=ExtResource( 10 )]
+position = Vector2( 32, 544 )
+rotation = -1.5708
+
+[node name="Emitter2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 992, 544 )
+rotation = -1.5708
+
 [node name="Title" type="Label" parent="."]
-margin_left = 416.0
+margin_left = 392.0
 margin_top = 32.0
-margin_right = 608.0
+margin_right = 627.0
 margin_bottom = 111.0
+custom_fonts/font = ExtResource( 6 )
 text = "Signal Sync"
 align = 1
 
@@ -19,5 +59,51 @@ margin_top = 110.0
 margin_right = 576.0
 margin_bottom = 174.0
 text = "Play"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 128.0
+margin_top = 192.0
+margin_right = 448.0
+margin_bottom = 308.0
+text = "Red:
+W - move forward
+A - turn left
+S - move backward
+D - turn right
+Q - launch projectile
+"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 448.0
+margin_top = 320.0
+margin_right = 768.0
+margin_bottom = 436.0
+text = "Blue:
+I - move forward
+J - turn left
+K - move backward
+L - turn right
+U - launch projectile
+"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 768.0
+margin_top = 192.0
+margin_right = 1088.0
+margin_bottom = 308.0
+text = "Green:
+Up Arrow Key - move forward
+Left Arrow Key - turn left
+Down Arrow Key - move backward
+Right Arrow Key - turn right
+Right Shift - launch projectile
+"
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 192.0
+margin_top = 528.0
+margin_right = 864.0
+margin_bottom = 616.0
+text = "Objective: use the equipped mirrors with each other to carry an optical signal throughout the levels."
 
 [connection signal="pressed" from="NextButton" to="." method="_on_NextButton_pressed"]
